@@ -32,8 +32,8 @@ ubuntu22.04: BASE_IMAGE = docker.io/ubuntu:22.04
 $(DISTRIBUTIONS):
 	DOCKER_BUILDKIT=1 \
 		$(CONTAINER_TOOL) build --pull \
-		--tag "registry.k8s.io/dra-example-driver/dra-example-driver-build:golang1.23.1" \
-#		--tag $(IMAGE) \
+#		--tag "registry.k8s.io/dra-example-driver/dra-example-driver-build:golang1.23.1" \
+		--tag $(IMAGE) \
 		--build-arg GOLANG_VERSION="$(GOLANG_VERSION)" \
 		--build-arg BASE_IMAGE="$(BASE_IMAGE)" \
 		--build-arg VERSION="$(VERSION)" \
